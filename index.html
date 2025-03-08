@@ -9,16 +9,21 @@
   <!-- VK Mini Apps SDK -->
   <script src="https://unpkg.com/@vkui/core/dist/vkui.min.js"></script>
   <script>
-    // Инициализация VK Mini Apps SDK
-    const vk = new VK({
-      appId: '53220242', // Ваш ID приложения
-    });
+    // Проверка загрузки SDK
+    if (typeof VK === 'undefined') {
+      console.error('VK Mini Apps SDK не загружен!');
+    } else {
+      // Инициализация VK Mini Apps SDK
+      const vk = new VK({
+        appId: '53220242', // Ваш ID приложения
+      });
 
-    vk.init().then(() => {
-      console.log('VK Mini Apps SDK успешно инициализирован');
-    }).catch((error) => {
-      console.error('Ошибка инициализации VK Mini Apps SDK:', error);
-    });
+      vk.init().then(() => {
+        console.log('VK Mini Apps SDK успешно инициализирован');
+      }).catch((error) => {
+        console.error('Ошибка инициализации VK Mini Apps SDK:', error);
+      });
+    }
   </script>
 </head>
 <body>
