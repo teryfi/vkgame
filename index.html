@@ -5,6 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Кликер Космоса</title>
   <link rel="stylesheet" href="style.css">
+
+  <!-- VK Mini Apps SDK -->
+  <script src="https://unpkg.com/@vkui/core/dist/vkui.min.js"></script>
+  <script>
+    // Инициализация VK Mini Apps SDK
+    const vk = new VK({
+      appId: '53220242', // Ваш ID приложения
+    });
+
+    vk.init().then(() => {
+      console.log('VK Mini Apps SDK успешно инициализирован');
+    }).catch((error) => {
+      console.error('Ошибка инициализации VK Mini Apps SDK:', error);
+    });
+  </script>
 </head>
 <body>
   <div class="game-container">
